@@ -1,0 +1,22 @@
+name: ES Lint
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install modules
+        run: npm install
+      - name: Run Tests
+        run: npm test
+    # - name: Run ESLint
+    #   run: eslint . --ext .js,.jsx,.ts,.tsx
