@@ -16,7 +16,8 @@ jobs:
           node-version: 16
       - name: Install modules
         run: npm install
-      - name: Run Tests
-        run: npm test
-    # - name: Run ESLint
-    #   run: eslint . --ext .js,.jsx,.ts,.tsx
+      - name: Run Coverage
+        run: npm run coverage
+      - name: Run Lint
+        run: npm run lint
+
